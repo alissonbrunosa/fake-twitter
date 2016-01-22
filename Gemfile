@@ -15,6 +15,7 @@ gem 'slim-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-collection_matchers'
   gem 'byebug'
 end
 
