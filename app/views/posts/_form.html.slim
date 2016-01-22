@@ -1,3 +1,3 @@
-= form_for(:post, url: posts_path) do |f| 
+= form_for(:post, url: posts_path, remote: true, html: {id: "form_post"}) do |f| 
   = f.text_area :body
   = f.submit
