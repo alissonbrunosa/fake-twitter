@@ -1,2 +1,9 @@
 h1
 = current_user.name
+
+= render 'posts/form'
+
+- current_user.posts.each do |post|
+  p 
+    = post.body
+    = link_to "X", post, method: :delete
