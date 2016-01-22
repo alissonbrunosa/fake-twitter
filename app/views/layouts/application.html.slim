@@ -4,7 +4,37 @@ html
     title
       | FakeTwitter
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
     = csrf_meta_tags
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
   body
-    = yield
+    header
+      nav
+        .container
+          .nav-wrapper
+            a.brand-logo href="#"  Logo
+            ul#nav-mobile.right.hide-on-med-and-down
+              li
+                
+              li
+                form
+                  .input-field
+                    i.material-icons.prefix search
+                    input#icon_prefix.validate type="text"
+              li
+                = link_to('Logout', destroy_user_session_path, :method => :delete)
+
+    .container
+      .row
+        .col.s4
+          .card-panel.teal
+            span.white-text
+              | I am a very simple card. I am good at containing small bits of information.
+              | I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+
+        .col.s8
+          = yield
+
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    

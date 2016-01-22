@@ -1,6 +1,6 @@
 <% if @post.errors.any? %>
   alert("Algo de errado não está certo");
 <% else %>
-  $('#posts').before("<%= j render @post %>");
+  $('#feed').prepend("<%= j render @post %>");
   $('#form_post').trigger('reset');
 <% end %>

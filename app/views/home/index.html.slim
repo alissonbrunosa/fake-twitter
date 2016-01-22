@@ -1,8 +1,4 @@
-h1
-= current_user.name
-
 = render 'posts/form'
 
-#posts
-  - current_user.posts.each do |post|
-    = render post
+ul.collection id="feed"
+  = render current_user.posts
