@@ -1,3 +1,9 @@
 = form_for(:post, url: posts_path, remote: true, html: {id: "form_post"}) do |f| 
-  = f.text_area :body
-  = f.submit
+    .row  
+      .input-field
+        i.material-icons.prefix
+         | comment
+        = f.text_area :body, class: "materialize-textarea", length: 150
+        = f.label "O que está acontecendo?"
+    .row
+      = f.submit "Enviar", class: "btn right waves-effect waves-light"
