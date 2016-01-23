@@ -4,5 +4,6 @@ li.collection-item.avatar id="post_#{post.id}"
     = post.user.name
   p
     = post.body
-  = link_to(post, method: :delete, remote: :true, class: "secondary-content") do
-    i.material-icons delete
+  - if post.user == current_user
+    = link_to(post, method: :delete, remote: :true, class: "secondary-content") do
+      i.material-icons delete
