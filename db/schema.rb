@@ -16,16 +16,6 @@ ActiveRecord::Schema.define(version: 20160123004215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "connections", id: false, force: :cascade do |t|
-    t.integer  "to"
-    t.integer  "from"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "connections", ["from", "to"], name: "index_connections_on_from_and_to", using: :btree
-  add_index "connections", ["from"], name: "index_connections_on_from", using: :btree
-
   create_table "posts", force: :cascade do |t|
     t.string   "body"
     t.integer  "user_id"
@@ -61,7 +51,5 @@ ActiveRecord::Schema.define(version: 20160123004215) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "connections", "users", column: "from"
-  add_foreign_key "connections", "users", column: "to"
   add_foreign_key "posts", "users"
 end
