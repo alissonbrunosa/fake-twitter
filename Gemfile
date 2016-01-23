@@ -15,7 +15,9 @@ gem 'slim-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
   gem 'rspec-collection_matchers'
+  gem 'database_cleaner'
   gem 'byebug'
 end
 

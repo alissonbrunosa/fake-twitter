@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-
   def feed
     ids = following_ids
     ids << self.id
