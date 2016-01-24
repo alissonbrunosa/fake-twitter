@@ -1,4 +1,4 @@
+- provide :profile do
+  = render partial: 'users/profile', locals: { user: current_user }
 = render 'posts/form'
-
-ul.collection id="feed"
-  = render current_user.feed
+= render partial: 'posts/list_posts', locals: { posts: current_user.feed }

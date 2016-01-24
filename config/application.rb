@@ -22,5 +22,10 @@ module FakeTwitter
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.to_prepare do            
+      Devise::PasswordsController.layout "blank"
+      Devise::SessionsController.layout "blank"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "blank" }        
+    end
   end
 end

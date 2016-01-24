@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
     foreign_key: "from_user_id",
     association_foreign_key: "to_user_id", includes: :posts)
 
+  validates :name,
+    presence: true
+
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -20,5 +24,9 @@ class User < ActiveRecord::Base
     ids = following_ids
     ids << self.id
     Post.includes(:user).where(user_id: ids)
+  end
+
+  def self.autocomple_name(value)
+    order('name ASC').where('name LIKE ?', "%#{value}%")
   end
 end

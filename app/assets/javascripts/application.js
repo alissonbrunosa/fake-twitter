@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require materialize
-//= require_tree .
+//= require jquery-ui
+//= require users_autocomplete
+//= require handlebars-v4.0.5

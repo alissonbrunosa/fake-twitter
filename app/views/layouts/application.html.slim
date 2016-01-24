@@ -9,32 +9,46 @@ html
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
   body
     header
-      nav
-        .container
-          .nav-wrapper
-            a.brand-logo href="#"  Logo
-            ul#nav-mobile.right.hide-on-med-and-down
-              li
-                
-              li
-                form
-                  .input-field
-                    i.material-icons.prefix search
-                    input#icon_prefix.validate type="text"
-              li
-                = link_to('Logout', destroy_user_session_path, :method => :delete)
+      ul#menu_user.dropdown-content
+        li
+          a href="#!"  two
+        li.divider
+        li
+          = link_to('Configurações', edit_user_registration_path)
+        li
+          = link_to('Logout', destroy_user_session_path, :method => :delete)
+      .navbar-fixed    
+        nav
+          .cont
+            .nav-wrapper
+              = link_to "FakeTwitter", home_index_path, class: "brand-logo"
+              ul#nav-mobile.right.hide-on-med-and-down
+                li
+                  
+                li
+                  form
+                    .input-field
+                      input#search name="search" type="search" required=""
+                      label for="search" 
+                        i.material-icons search
+                      i.material-icons close
+                li
+                  a.dropdown-button[href="#" data-activates="menu_user"]
+                    strong 
+                      = current_user.name
+                    i.material-icons.right
+                      | arrow_drop_down
 
-    .container
+    .cont
+      - if notice || alert
+        .chip
+          = notice
+          = alert
       .row
         .col.s4
-          .card-panel.teal
-            span.white-text
-              | I am a very simple card. I am good at containing small bits of information.
-              | I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-
+          = yield :profile
         .col.s8
           = yield
-
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     
