@@ -1,5 +1,5 @@
 li.collection-item.avatar id="post_#{post.id}"
-  img.square alt="" src="http://materializecss.com/images/yuna.jpg"
+  img.square alt="" src="#{image_url(post.user)}"
   strong.title
     = link_to post.user.name, user_path(post.user)
   p

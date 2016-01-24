@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   var template = 
   ['<li class="collection-item avatar">',
-    '<img src="http://materializecss.com/images/yuna.jpg" alt="" class="square">',
+    '<img src="{{image}}" alt="" class="square">',
     '<span class="title">{{name}}</span>',
     '<p>{{email}}</p>',
   '</li>'].join("\n");
