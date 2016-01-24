@@ -40,6 +40,10 @@
   height: 70px;
 }
 
+.border-round {
+  border-radius: 5px !important;
+}
+
 .square {
   border-radius: 5px;
 }

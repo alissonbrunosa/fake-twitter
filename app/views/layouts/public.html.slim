@@ -8,15 +8,9 @@ html
     = csrf_meta_tags
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
   body
-    header
-      .navbar-fixed
-        nav
-          .cont
-            .nav-wrapper
-              a.brand-logo href="#"  FakeTwitter
-              ul#nav-mobile.right.hide-on-med-and-down
-                li
+    = render 'layouts/header'
     .cont
+      = render 'layouts/alert'
       .row
         .col.s8
           = yield

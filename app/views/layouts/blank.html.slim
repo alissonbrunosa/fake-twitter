@@ -8,22 +8,11 @@ html
     = csrf_meta_tags
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
   body
-    header
-      nav.navbar-fixed
-        .container
-          .nav-wrapper
-            = link_to FakeTwitter, root_path, class: "brand-logo"
-            ul#nav-mobile.right.hide-on-med-and-down
-              li
-                = link_to('Login', root_path)
-
+    = render 'layouts/header'
     .container
+      = render 'layouts/alert'
       .row
         .col.s12
-          - if notice || alert
-            .chip
-              = notice
-              = alert
           = yield
 
 
