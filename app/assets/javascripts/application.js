@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require materialize
 //= require jquery-ui
 //= require users_autocomplete

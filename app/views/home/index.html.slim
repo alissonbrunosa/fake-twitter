@@ -1,4 +1,8 @@
 - provide :profile do
   = render partial: 'users/profile', locals: { user: current_user }
-= render 'posts/form'
+.card
+  .card-content
+    = render 'posts/form'
 = render partial: 'posts/list_posts', locals: { posts: current_user.feed }
+
+  
