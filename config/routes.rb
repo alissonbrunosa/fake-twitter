@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   root to: 'public#index'
   resources :home, only: [:index]
   resources :posts, only: [:create, :destroy]
-  devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_for :users, controllers: { 
+    registrations: "users/registrations",
+    :omniauth_callbacks => "users/auth_callbacks"
+  }
   resources :users, only: :show do
     member do
       patch 'follow'
