@@ -1,0 +1,46 @@
+- provide :profile do
+  = render partial: 'users/profile', locals: { user: current_user }
+
+h4
+  | Conta 
+  = resource_name.to_s.humanize
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = devise_error_messages!
+  .row
+    .input-field.col.s6
+      i.material-icons.prefix 
+        | account_circle
+      = f.text_field :name, autofocus: true
+      = f.label :name
+    .input-field.col.s6
+      i.material-icons.prefix 
+        | account_circle
+      = f.email_field :email
+      = f.label :email
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    div
+      | Currently waiting confirmation for: 
+      = resource.unconfirmed_email
+  .row
+    .input-field.col.s6
+      i.material-icons.prefix
+        | lock_outline
+      = f.password_field :password, autocomplete: "off"
+      = f.label :password
+    .input-field.col.s6
+      i.material-icons.prefix
+        | lock_outline
+      = f.password_field :password_confirmation, autocomplete: "off"
+      = f.label :password_confirmation
+  .row.col.s12
+    .input-field.prefix
+      i.material-icons.prefix
+          | lock_open
+      = f.password_field :current_password, autocomplete: "off"
+      = f.label :current_password
+  .row
+    = f.button "Atualizar", class: "btn right waves-effect waves-light"
+br
+br
+.divider
+= link_to "Cancelar conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete

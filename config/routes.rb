@@ -3,6 +3,15 @@ Rails.application.routes.draw do
   resources :home, only: [:index]
   resources :posts, only: [:create, :destroy]
   devise_for :users, controllers: { registrations: "users/registrations" }
+  resources :users, only: :show do
+    member do
+      patch 'follow'
+      patch 'unfollow'
+    end
+    collection do
+      get 'autocomplete', :defaults => { :format => 'json' }
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

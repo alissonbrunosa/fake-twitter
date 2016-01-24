@@ -1,0 +1,28 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  .row
+    .col.s12
+      h5.center-align
+        | Participe hoje do Twitter.
+    .input-field.col.s6.offset-s3.offset-s3
+      i.material-icons.prefix 
+        | account_circle
+      = f.text_field :name, autofocus: true
+      = f.label :name
+    .input-field.col.s6.offset-s3
+      i.material-icons.prefix 
+        | mail
+      = f.email_field :email
+      = f.label :email
+    .input-field.col.s6.offset-s3
+      i.material-icons.prefix 
+        | lock
+      = f.password_field :password, autocomplete: "off"
+      = f.label :password
+    .input-field.col.s6.offset-s3
+      i.material-icons.prefix 
+        | lock
+      = f.password_field :password_confirmation, autocomplete: "off"
+      = f.label :password_confirmation
+  .row
+    = f.button "Inscreva-se", class: "btn right waves-effect waves-light"
