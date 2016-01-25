@@ -16,3 +16,8 @@
 //= require jquery-ui
 //= require users_autocomplete
 //= require handlebars-v4.0.5
+//= require angular.min
+//= require ng-infinite-scroll
+//= require posts
+
+

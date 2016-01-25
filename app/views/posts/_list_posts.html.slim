@@ -1,3 +1,4 @@
-ul.collection.with-header.border-round id="feed"
-  - posts.each do |post|
-    = render post
+div ng-controller="PostsCtrl as ctrl"
+  ul.collection.with-header.border-round id="feed" infinite-scroll='ctrl.scroll()' infinite-scroll-disabled='ctrl.busy' infinite-scroll-distance='1'
+    - posts.each do |post|
+      = render post

@@ -3,6 +3,4 @@
 .card
   .card-content
     = render 'posts/form'
-= render partial: 'posts/list_posts', locals: { posts: current_user.feed }
-
-  
+= render partial: 'posts/list_posts', locals: { posts: @posts }

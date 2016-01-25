@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'public#index'
-  resources :home, only: [:index]
+  resources :home, only: [:index] do
+    get :page, on: :collection
+  end
   resources :posts, only: [:create, :destroy]
   devise_for :users, controllers: { 
     registrations: "users/registrations",
