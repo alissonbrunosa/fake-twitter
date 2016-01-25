@@ -22,6 +22,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'rspec-collection_matchers'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'launchy'
   gem 'database_cleaner'
   gem 'byebug'
 end
