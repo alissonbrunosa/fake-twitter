@@ -27,6 +27,7 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'byebug'
+  gem 'site_prism'
 end
 
 group :development do

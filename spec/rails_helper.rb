@@ -10,8 +10,11 @@ require "database_cleaner"
 require 'devise'
 require 'capybara/rspec'
 require 'capybara/rails'
+require 'site_prism'
+
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join("spec/pages/**/*.rb")].each { |f| require f }
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -74,7 +77,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.strategy = :truncation
   end
 
   config.before(:each) do
