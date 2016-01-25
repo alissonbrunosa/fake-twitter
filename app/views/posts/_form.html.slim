@@ -4,6 +4,6 @@
         i.material-icons.prefix
          | comment
         = f.text_area :body, class: "materialize-textarea", length: 150
-        = f.label "O que está acontecendo?"
+        = f.label :body, "O que está acontecendo?"
     .row
       = f.button "Enviar", class: "btn right waves-effect waves-light"
