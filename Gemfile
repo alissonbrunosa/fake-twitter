@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.2.3"
 
 gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
@@ -13,6 +14,8 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'slim-rails'
 gem 'kaminari'
+gem 'rails_12factor', group: :production
+gem 'puma'
 
 
 group :development, :test do
