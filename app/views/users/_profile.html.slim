@@ -19,7 +19,7 @@
         li
           span.profile-label SEGUIDORES
           span.profile-value = user.followers.count
-  - if user != current_user
+  - if current_user && user != current_user
     .card-action
       - if current_user.following_ids.include?(user.id)
         = link_to("Deixar de seguir", unfollow_user_path(user), method: :patch)
